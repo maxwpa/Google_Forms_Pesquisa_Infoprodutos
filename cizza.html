@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}}, "layer": [{"mark": {"type": "arc"}, "encoding": {"color": {"field": "Influ\u00eancia na Compra", "type": "nominal"}, "size": {"field": "Frequ\u00eancia no Consumo", "type": "quantitative"}, "theta": {"field": "Porcentagem", "type": "quantitative"}, "tooltip": [{"field": "Influ\u00eancia na Compra", "type": "nominal"}, {"field": "Frequ\u00eancia no Consumo", "type": "quantitative"}, {"field": "Porcentagem", "type": "quantitative"}]}, "name": "view_13"}, {"mark": {"type": "text", "align": "center", "baseline": "middle", "fontSize": 12}, "encoding": {"color": {"value": "black"}, "radius": {"value": 1.25}, "text": {"field": "Porcentagem", "format": ".1f", "type": "nominal"}}}], "data": {"name": "data-85a2ab58a64244b627c5f9cd47c26743"}, "height": 300, "params": [{"name": "param_37", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales", "views": ["view_13"]}], "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-85a2ab58a64244b627c5f9cd47c26743": [{"Influ\u00eancia na Compra": "Tema e Relav\u00e2ncia", "Frequ\u00eancia no Consumo": 132, "Porcentagem": 26.666666666666668}, {"Influ\u00eancia na Compra": "Avalia\u00e7\u00e3o", "Frequ\u00eancia no Consumo": 122, "Porcentagem": 24.646464646464647}, {"Influ\u00eancia na Compra": "Qualidade da Apresenta\u00e7\u00e3o", "Frequ\u00eancia no Consumo": 78, "Porcentagem": 15.757575757575756}, {"Influ\u00eancia na Compra": "Recomentada\u00e7\u00e3o", "Frequ\u00eancia no Consumo": 70, "Porcentagem": 14.14141414141414}, {"Influ\u00eancia na Compra": "Conte\u00fado Gratis", "Frequ\u00eancia no Consumo": 55, "Porcentagem": 11.11111111111111}, {"Influ\u00eancia na Compra": "Pre\u00e7o", "Frequ\u00eancia no Consumo": 32, "Porcentagem": 6.4646464646464645}, {"Influ\u00eancia na Compra": "Possibilidade de Devolu\u00e7\u00e3o", "Frequ\u00eancia no Consumo": 6, "Porcentagem": 1.2121212121212122}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
